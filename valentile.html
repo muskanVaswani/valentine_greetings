@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="valentine.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff758f;
+}
+.card{
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background-color:#ff8fa3;
+    overflow: hidden;
+    border: 10px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 100px rgba(0,0,0,.4);
+     
+}
+
+.card::before{
+    content:"";
+    position: absolute;
+    background-color: #ffb3c1;
+    width: 100px;
+    height:100px;
+    border-radius:50% ;
+    top: 140px;
+    left: -25px;
+    box-shadow: 60px 20px #ffb3c1, 130px 10px #ffb3c1, 190px 20px #ffb3c1, 
+    260px -5px #ffb3c1, 340px 20px #ffb3c1;
+}
+.card::after{
+    content:"";
+    position: absolute;
+    background-color: #ffccd5;
+    width:100px;
+    height:100px;
+    border-radius: 50% ;
+    top: 160px;
+    left: -40px;
+    box-shadow:  50px 20px #ffccd5, 120px 40px #ffccd5, 200px 15px #ffccd5, 260px 30px #ffccd5, 330px 30px #ffccd5, 380px 10px #ffccd5 ;
+
+}
+.clouds{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    z-index: 5;
+    top:210px;
+    left:-20px;
+    background-color: #fff0f3;
+    box-shadow: 55px 30px #fff0f3, 125px 10px #fff0f3, 175px 20px #fff0f3,250px 10px #fff0f3, 320px 5px #fff0f3, 
+    380px 10px #fff0f3;
+
+}
+
+.hearts{
+    position: absolute;
+    z-index:2;
+}
+
+.heart1{
+    position:absolute;
+    left: 100px;
+    top:250px;
+    animation : up 4s linear forwards 1s;
+}
+
+.right-side::before, .right-side::after{
+    content:"";
+    position: absolute;
+    transform-origin:left;
+    animation : move 1s ease infinite;
+}
+
+.left-side::before, .left-side::after{
+    content: "";
+    position: absolute;
+    transform-origin:right;
+    animation:move 1s ease infinite;
+}
+
+@keyframes move{
+    0% , 100% {transform: rotateY(0);}
+    50%{transform:rotateY(-45deg);}
+}
+
+.right-side::before{
+    border-radius: 50% 50% 50% 0;
+    width: 21px;
+    height: 20px;
+    background-color: #c9184a;
+    left:-0.26px
+
+}
+
+.right-side::after {
+    height:0;
+    width:0;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #c9184a;
+    top:19px;
+    left:-0.26px;
+}
+.left-side::before{
+    border-radius: 50% 50% 0 50%;
+    width: 20px;
+    height: 20px;
+    left: -20.7px;
+    background-color: #ff4d6d;
+
+}
+
+.left-side::after{
+    height: 0;
+    width: 0;
+    left: -15px;
+    border-bottom: 10px solid transparent;
+    border-right: 15px solid #ff4d6d;
+    top:19px;
+}
+
+@keyframes up{
+    0%{transform: translateY(0);}
+    100%{transform: translateY(-200px);}
+
+}
+.heart2{
+    position: absolute;
+    left:270px;
+    top:230px;
+    animation:up 5s linear forwards 1.8s ;
+}
+.heart3{
+    position: absolute;
+    left:85px;
+    top:415px;
+    animation:up 5s linear forwards 3s;
+}
+.heart4{
+    position: absolute;
+    left: 320px;
+    top: 380px;;
+    animation:upTwo 9s linear infinite 3.5s ;
+}
+@keyframes upTwo{
+    0%{transform: translateY(0);}
+    100%{transform: translateY(-450px);}
+}
+
+.heart5{
+    position: absolute;
+    left:15px;
+    top:400px;
+    animation:upTwo 13s linear infinite 4.5s ;
+}
+.text {
+    position: absolute;
+    color: #800f2f;
+    font-size:30px;
+    font-family:fantasy;
+    line-height:1;
+    text-align: center;
+    width:380px;
+    left:10px;
+    z-index:3;
+    top:320px;
+    animation: up 1s ease forwards;
+    transition: .2s;
+  }
+  
+  .hover {
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    /* text-align:unset; */
+  }
+  
+  .text:hover span {
+    display: none;
+  }
+  
+  .text:hover:before {
+    content:"Hey love, just wanted to take a moment to say how much you mean to me. Your presence brightens my darkest days, and your love fills my heart with joy. Grateful for you every day. 💖";
+    font-size:15px;
+  
+  }
+  .text:hover::after{
+    text-align:center;
+  }
+
+</style>
+</head>
+
+<body>
+
+    <div class="happy">
+        <div class="card">
+            <div class="clouds"></div>
+            <div class="hearts">
+                <div class="heart1">
+                    <div class="left-side"></div>
+                    <div class="right-side"></div>
+                </div>
+                <div class="heart2">
+                    <div class="left-side"></div>
+                    <div class="right-side"></div>
+                </div>
+                <div class="heart3">
+                    <div class="left-side"></div>
+                    <div class="right-side"></div>
+                </div>
+                <div class="heart4">
+                    <div class="left-side"></div>
+                    <div class="right-side"></div>
+                </div>
+                <div class="heart5">
+                    <div class="left-side"></div>
+                    <div class="right-side"></div>
+                </div>
+            </div>
+            <div class="text"><span>Happy Valentine's<br>Day!</span></div>
+        </div>
+       
+<script>
+    // Function to handle user input and update the text content
+    function updateText() {
+        var userInput = prompt("Enter your message:");
+        if (userInput !== null) {
+            document.querySelector(".text span").textContent = userInput;
+        }
+    }
+</script>
+<!-- Update the paragraph with the onclick event -->
+<p class="hover">click on happy valentine's</p>
+<p class="hover" onclick="updateText()">Add a reply here..</p>
+
+</body>
+
+</html>
+
