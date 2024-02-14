@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="valentine.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Greetings!</title>
+    <title>Document</title>
 <style>
     body{
     height:100vh;
@@ -197,7 +197,25 @@
   .text:hover::after{
     text-align:center;
   }
-
+  @media (max-width: 500px) {
+        .card {
+            max-width: 300px;
+            max-height: 300px;
+            padding-right: 50px;
+        }
+        .text{
+            font-size:30px;
+            left: -10px;
+            top: 300px;
+        }
+        .text:hover:before {
+            content:"Hey love, just wanted to take a moment to say how much you mean to me. Your presence brightens my darkest days, and your love fills my heart with joy. Grateful for you every day. 💖";
+            font-size:15px;
+            text-align: justify;
+            display: inline-block;
+            margin: 0 30px;
+        }
+    }
 </style>
 </head>
 
@@ -230,7 +248,9 @@
             </div>
             <div class="text"><span>Happy Valentine's<br>Day!</span></div>
         </div>
-       
+       <!-- Update the paragraph with the onclick event -->
+<p class="hover">click on happy valentine's</p>
+<p class="hover" onclick="updateText()">Add a reply here..</p>
 <script>
     // Function to handle user input and update the text content
     function updateText() {
@@ -240,9 +260,7 @@
         }
     }
 </script>
-<!-- Update the paragraph with the onclick event -->
-<p class="hover">click on happy valentine's</p>
-<p class="hover" onclick="updateText()">Add a reply here..</p>
+
 
 </body>
 
